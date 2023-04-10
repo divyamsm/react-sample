@@ -45,7 +45,7 @@ describe('App load', () => {
 
   //navigate to next page
   it('has a button that is correct size, and navigates', () => {
-    cy.get('.MuiButton-containedPrimary').should('contain', 'Next Page').click()
+    cy.get('.MuiButton-containedPrimary').should('contain', 'Next Page').should('have.a.property','size','medium').click()
     cy.url().should('include', '/page-two')
   })
 

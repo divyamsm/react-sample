@@ -20,13 +20,17 @@ const marks = [
     label: 'Urgent',
   },
 ];
-
+  
 
 function PageThree() {
   const [urgency, setUrgency] = useState(50);
 
   const handleSliderChange = (event, newValue) => {
     setUrgency(newValue);
+  };
+
+  const thumbStyle = {
+    zIndex: 1,
   };
 
   return (
@@ -47,6 +51,7 @@ function PageThree() {
               marks={marks}
               min={0}
               max={100}
+              thumbProps={{ style: thumbStyle }}
             />
           </div>
       </Grid>
@@ -78,14 +83,15 @@ function PageThree() {
           rows={2}
           marginBottom= {theme.spacing(2)}
         />
-        <Button marginTop={theme.spacing(2)}
+        <Link to='/'><Button marginTop={theme.spacing(2)}
           width= '50%'
           variant="outlined"
           color="primary"
           size="large"
+          type='submit'
         >
           Send
-        </Button>
+        </Button></Link>
       </div>
       <p/>
       <div>
@@ -96,10 +102,6 @@ function PageThree() {
     </div>
 
   );
-
-
-      
-
 
 }
 

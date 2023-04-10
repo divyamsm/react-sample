@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function PageTwo() {
   return (
-    <div align = 'center'>
+    <div align = 'center' id="form-div">
       <h1>Apply</h1>
       <form>
         <label>

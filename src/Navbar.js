@@ -121,17 +121,17 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             
-            <Link to='/'><Button  
+            <Link to='/'><Button id="nav-home"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}>
                 Home
             </Button></Link>
-            <Link to='/page-two'><Button
+            <Link to='/page-two'><Button id = "nav-apply"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}>
                 Apply
             </Button></Link>
-            <Link to='/page-three'><Button
+            <Link to='/page-three'><Button id = "nav-contact"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}>
                 Contact Us

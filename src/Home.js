@@ -1,5 +1,5 @@
 import { Container, Typography, ImageList, ImageListItem, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 var itemData = ['https://www.propertymanagementselect.com/wp-content/uploads/2015/04/sacramento-property-management-apartments.jpg','https://www.souciehorner.com/wp-content/uploads/2017/04/Kitchen2-1536.jpg','http://thedestinyformula.com/wp-content/uploads/2018/12/Boutique-hotel-Room-Studio-Apartment-Ideas-587c08153df78c17b6ab82ca.jpg'];
 
@@ -8,7 +8,7 @@ function Home() {
       <main>
         <div>
           <Container maxWidth='sm'>
-        <Typography variant='h5' align='center' marginTop={10}>Welcome to our beautiful apartment complex. 
+        <Typography id ="welcome" variant='h5' align='center' marginTop={10}>Welcome to our beautiful apartment complex. 
         We have a lot of great amenities to offer you.
           </Typography>
 

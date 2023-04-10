@@ -38,11 +38,11 @@ function Navbar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="sm">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="a"
             href="/"
@@ -121,6 +121,11 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             
+          <Link to='/page-three'><Button id = "nav-contact"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}>
+                Contact Us
+            </Button></Link>
             <Link to='/'><Button id="nav-home"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}>
@@ -131,11 +136,7 @@ function Navbar() {
                 sx={{ my: 2, color: 'white', display: 'block' }}>
                 Apply
             </Button></Link>
-            <Link to='/page-three'><Button id = "nav-contact"
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}>
-                Contact Us
-            </Button></Link>
+            
             
           </Box>
 

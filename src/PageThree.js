@@ -35,12 +35,12 @@ function PageThree() {
 
   return (
     <div display='flex' flexDirection='column' alignItems='center' justifyContent='center'marginBottom={theme.spacing(100)} marginTop={theme.spacing(100)} marginLeft='300' >
-      <Typography variant="h4" align="center">
+      <Typography variant="h2" align="right">
         Contact Us
       </Typography>
-      <Grid container spacing={2} justifyContent='center' alignItems='center' marginTop={theme.spacing(3)}>
-        <Grid item width='50%'>
-          <div width='80%' marginBottom={theme.spacing(3)} marginTop={theme.spacing(3)}>
+      <Grid container spacing={2} justifyContent='left' alignItems='center' marginTop={theme.spacing(3)}>
+        <Grid item width='80%'>
+          <div width='50%' marginBottom={theme.spacing(3)} marginTop={theme.spacing(3)}>
             <Typography id="urgency-slider" align='center' gutterBottom>
               Urgency
             </Typography>
@@ -49,16 +49,16 @@ function PageThree() {
               onChange={handleSliderChange}
               aria-labelledby="urgency-slider"
               marks={marks}
-              min={0}
-              max={100}
+              min={20}
+              max={150}
               thumbProps={{ style: thumbStyle }}
             />
           </div>
       </Grid>
         </Grid>
       <div display='flex' justifyContent='space-between' width='50%' marginBottom={theme.spacing(3)}>
-        <img src="http://www.easterngraphics.com/pcon/en/wp-content/uploads/2015/03/Musterwohnung-2.png" alt="apartment" width='25%' />
-        <img src="https://youngandtheinvested.com/wp-content/uploads/invest-in-apartment-buildings.jpg" alt="building" width='25%' />
+        <img src="http://www.easterngraphics.com/pcon/en/wp-content/uploads/2015/03/Musterwohnung-2.png" alt="apartment" width='45%' />
+        <img src="https://youngandtheinvested.com/wp-content/uploads/invest-in-apartment-buildings.jpg" alt="building" width='20%' />
       </div>
       <div display='flex' flexDirection='column' alignItems='center' width='80%'>
         <TextField
@@ -88,7 +88,7 @@ function PageThree() {
           variant="outlined"
           color="primary"
           size="large"
-          type='submit'
+          type='cancel'
         >
           Send
         </Button></Link>

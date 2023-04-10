@@ -17,12 +17,12 @@ function Home() {
     return (
       <main>
         <div>
-          <Container maxWidth='large'>
-        <Typography id ="welcome" variant='h5' align='left' marginTop={10}>Welcome to our beautiful apartment complex. 
+          <Container maxWidth='sm'>
+        <Typography id ="welcome" variant='h5' align='center' marginTop={10}>Welcome to our beautiful apartment complex. 
         We have a lot of great amenities to offer you.
           </Typography>
 
-          <ImageList sx={{ width: 650, height: 500 }} variant="standard" cols={3} gap={8}>
+          <ImageList sx={{ width: 500, height: 450 }} variant="woven" cols={3} gap={8}>
   {itemData.map((item) => (
     <ImageListItem key={item}>
       <img
@@ -34,15 +34,15 @@ function Home() {
   ))}
 </ImageList>
 
-<Label align='right'>Choose your zip code : </Label>
-<List >
+<Label align='center'>Choose your zip code : </Label>
+<List>
   {zipCodes.map((zipCode) => (
     <ListItem button key={zipCode.code}>
       <ListItemText primary={`${zipCode.city}, ${zipCode.state} ${zipCode.code}`} />
     </ListItem>
   ))}
 </List>
-        <Link to="/page-two"><Button size="small" variant = 'contained' align = 'right'>Next Page</Button></Link>
+        <Link to="/page-two"><Button variant = 'contained' align = 'center'>Next Page</Button></Link>
         </Container>
         </div>
       </main>

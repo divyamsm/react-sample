@@ -23,7 +23,7 @@ function PageTwo() {
           <textarea />
         </label>
         <p/>
-        <img src="https://cdn3.iconfinder.com/data/icons/real-estate-27/65/_Apartment_Building-512.png" alt="placeholder" />
+        <img src="https://cdn3.iconfinder.com/data/icons/real-estate-27/65/_Apartment_Building-512.png" alt="placeholder" width='600' height ='500' />
         <p/>
         <div style={{ height: '200px', overflow: 'scroll' }}>
           <p>

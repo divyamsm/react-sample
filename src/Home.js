@@ -1,9 +1,19 @@
-import { Container, Typography, ImageList, ImageListItem, Button } from '@mui/material';
+import { Label } from '@mui/icons-material';
+import { Container, Typography, ImageList, ImageListItem, Button, List, ListItem, ListItemText} from '@mui/material';
 import { Link} from 'react-router-dom';
 
 var itemData = ['https://www.propertymanagementselect.com/wp-content/uploads/2015/04/sacramento-property-management-apartments.jpg','https://www.souciehorner.com/wp-content/uploads/2017/04/Kitchen2-1536.jpg','http://thedestinyformula.com/wp-content/uploads/2018/12/Boutique-hotel-Room-Studio-Apartment-Ideas-587c08153df78c17b6ab82ca.jpg'];
 
 function Home() {
+
+  const zipCodes = [
+    { code: '90210', city: 'Beverly Hills', state: 'CA' },
+    { code: '10001', city: 'New York', state: 'NY' },
+    { code: '60611', city: 'Chicago', state: 'IL' },
+    { code: '33139', city: 'Miami Beach', state: 'FL' },
+    { code: '98101', city: 'Seattle', state: 'WA' },
+  ];
+
     return (
       <main>
         <div>
@@ -23,6 +33,15 @@ function Home() {
     </ImageListItem>
   ))}
 </ImageList>
+
+<Label align='center'>Choose your zip code : </Label>
+<List>
+  {zipCodes.map((zipCode) => (
+    <ListItem button key={zipCode.code}>
+      <ListItemText primary={`${zipCode.city}, ${zipCode.state} ${zipCode.code}`} />
+    </ListItem>
+  ))}
+</List>
         <Link to="/page-two"><Button variant = 'contained' align = 'center'>Next Page</Button></Link>
         </Container>
         </div>

@@ -33,8 +33,8 @@ function PageTwo() {
       </form>
       <div>
         <Grid container alignContent={'right'} spacing={2}>
-          <Grid item xs={6} sm = {2}><Link to="/"><Button variant='contained'> Previous Page</Button></Link></Grid>
-          <Grid item xs={6} sm = {2}><Link to="/page-three"><Button variant='contained'> Next Page</Button></Link></Grid>
+          <Grid item xs={6} sm = {2}><Link to="/page-three"><Button variant='contained'> Previous Page</Button></Link></Grid>
+          <Grid item xs={6} sm = {2}><Link to="/"><Button variant='contained'> Next Page</Button></Link></Grid>
         </Grid>
       </div>
       

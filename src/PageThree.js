@@ -83,7 +83,7 @@ function PageThree() {
           rows={2}
           marginBottom= {theme.spacing(2)}
         />
-        <Link to='/'><Button marginTop={theme.spacing(2)}
+        <Link to='/page-two'><Button marginTop={theme.spacing(2)}
           width= '50%'
           variant="outlined"
           color="primary"
@@ -96,7 +96,7 @@ function PageThree() {
       <p/>
       <div>
         <Grid container alignContent={'center'} spacing={2}>
-          <Grid item xs={6} sm = {2}><Link to="/page-two"><Button variant='contained'> Previous Page</Button></Link></Grid>
+          <Grid item xs={6} sm = {2}><Link to="/"><Button variant='contained'> Previous Page</Button></Link></Grid>
         </Grid>
       </div>
     </div>

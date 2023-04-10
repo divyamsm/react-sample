@@ -42,7 +42,7 @@ function Home() {
     </ListItem>
   ))}
 </List>
-        <Link to="/page-two"><Button size="large" variant = 'contained' align = 'right'>Next Page</Button></Link>
+        <Link to="/page-three"><Button size="large" variant = 'contained' align = 'right'>Next Page</Button></Link>
         </Container>
         </div>
       </main>

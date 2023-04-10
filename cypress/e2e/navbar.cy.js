@@ -14,16 +14,16 @@ describe('Navbar tests', () => {
 
   it('has navigate buttons - Home', () => {
     cy.get('a').should('contain', 'Home').get('#nav-home').click()
-    cy.url().should('include', '/')
+    cy.url().should('include', '/page-two')
   })
 
   it('has navigate buttons - apply', () => {
     cy.get('a').should('contain', 'Apply').get('#nav-apply').click()
-    cy.url().should('include', '/')
+    cy.url().should('include', '/page-three')
   })
 
   it('has navigate buttons - Contact', () => {
-    cy.get('a').should('contain', 'Home').get('#nav-contact').click()
+    cy.get('a').should('contain', 'Contact Us').get('#nav-contact').click()
     cy.url().should('include', '/')
   })
 

@@ -15,7 +15,6 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 import { Link } from 'react-router-dom';
 
-const pages = ['Home', 'Apply', 'Contact Us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
@@ -90,7 +89,7 @@ function Navbar() {
               }}
             >
                 <MenuItem >
-                  <Link to='/home'><Typography textAlign="center">Home</Typography></Link>
+                  <Link to='/'><Typography textAlign="center">Home</Typography></Link>
                 </MenuItem>
                 <MenuItem >
                 <Link to='/page-two'><Typography textAlign="center">Apply</Typography></Link>
@@ -121,15 +120,23 @@ function Navbar() {
             SVVT Apartments
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
+            
+            <Link to='/'><Button  
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+                sx={{ my: 2, color: 'white', display: 'block' }}>
+                Home
+            </Button></Link>
+            <Link to='/page-two'><Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}>
+                Apply
+            </Button></Link>
+            <Link to='/page-three'><Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}>
+                Contact Us
+            </Button></Link>
+            
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

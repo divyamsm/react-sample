@@ -6,6 +6,10 @@ import React, { useState } from 'react';
 
 import Slider from '@mui/material/Slider';
 import { Typography, TextField, Button } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme();
+
 
 
 // const useStyles = makeStyles((theme) => ({
@@ -59,7 +63,6 @@ const marks = [
 
 
 function PageThree() {
-  // const classes = useStyles();
   const [urgency, setUrgency] = useState(50);
 
   const handleSliderChange = (event, newValue) => {
@@ -67,11 +70,11 @@ function PageThree() {
   };
 
   return (
-    <div className={classes.root}>
+    <div display='flex' flexDirection='column' alignItems='center' justifyContent='center'marginBottom={theme.spacing(100)} marginTop={theme.spacing(100)} marginLeft='300' >
       <Typography variant="h4" align="center">
         Contact Us
       </Typography>
-      <div className={classes.sliderContainer}>
+      <div width='50%' marginBottom={theme.spacing(3)} marginTop={theme.spacing(3)}>
         <Typography id="urgency-slider" gutterBottom>
           Urgency
         </Typography>
@@ -84,24 +87,23 @@ function PageThree() {
           max={100}
         />
       </div>
-      <div className={classes.imageContainer}>
-        <img src="http://www.easterngraphics.com/pcon/en/wp-content/uploads/2015/03/Musterwohnung-2.png" alt="apartment" className={classes.image} />
-        <img src="https://youngandtheinvested.com/wp-content/uploads/invest-in-apartment-buildings.jpg" alt="building" className={classes.image} />
+      <div display='flex' justifyContent='space-between' width='50%' marginBottom={theme.spacing(3)}>
+        <img src="http://www.easterngraphics.com/pcon/en/wp-content/uploads/2015/03/Musterwohnung-2.png" alt="apartment" width='25%' />
+        <img src="https://youngandtheinvested.com/wp-content/uploads/invest-in-apartment-buildings.jpg" alt="building" width='25%' />
       </div>
-      <div className={classes.formContainer}>
+      <div display='flex' flexDirection='column' alignItems='center' width='80%'>
         <TextField
           id="name"
           label="Name"
           variant="outlined"
           fullWidth
-          className={classes.textField}
+          marginBottom= {theme.spacing(2)}
         />
-        <TextField
+        <TextField marginBottom= {theme.spacing(2)}
           id="email"
           label="Email"
           variant="outlined"
           fullWidth
-          className={classes.textField}
         />
         <TextField
           id="message"
@@ -110,16 +112,22 @@ function PageThree() {
           fullWidth
           multiline
           rows={4}
-          className={classes.textField}
+          marginBottom= {theme.spacing(2)}
         />
-        <Button
+        <Button marginTop={theme.spacing(2)}
+          width= '50%'
           variant="contained"
           color="primary"
           size="large"
-          className={classes.button}
         >
           Send
         </Button>
+      </div>
+      <p/>
+      <div>
+        <Grid container alignContent={'center'} spacing={2}>
+          <Grid item xs={6} sm = {2}><Link to="/page-two"><Button variant='contained'> Previous Page</Button></Link></Grid>
+        </Grid>
       </div>
     </div>
 

@@ -34,6 +34,8 @@
   li.done .it{color:var(--done);text-decoration:line-through}
   .note{font-size:13.5px;background:#fff6e5;border:1px solid #f1dfb8;border-radius:10px;padding:10px 12px;margin-top:10px}
   .empty{color:var(--muted);font-size:14px;font-style:italic}
+  .souv{display:inline-block;background:#ff2d87;color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:999px;padding:2px 8px;margin-right:8px;vertical-align:2px}
+  .legend{max-width:760px;margin:6px auto 0;padding:0 20px;font-size:13px;color:var(--muted)}
   footer{max-width:760px;margin:auto;padding:8px 20px 40px;color:var(--muted);font-size:12.5px}
 </style>
 </head>
@@ -41,6 +43,7 @@
 <header>
   <h1>Japan <span>買い物</span> List</h1>
   <p>Nov 25 – Dec 1, 2026 · Osaka → Kyoto → Tokyo · one store per item. Tap a box to tick it off (saved on this device).</p>
+  <p><span class="souv">Souvenir</span>optional gifts for friends and coworkers; pick per person. Prices are per item.</p>
 </header>
 <nav><div class="wrap" id="tabs"></div></nav>
 <main>
@@ -70,6 +73,13 @@
     </ul>
     <div class="note">Main Store is open both your Kyoto days. Want to see store-only models? KUOE Sanjo store is 30 seconds away (2F CARO MASUNE, 55 Benkei-ishicho), but it is closed Thursday, so go Friday, Nov 27.</div>
   </div>
+  <div class="hood">
+    <h3>Kyoto Station</h3>
+    <div class="store"><b>Shoyeido Kunkun</b> · JR Kyoto Station 1F, ASTY Road · 9:00–21:00 daily · easy to grab on your way out Sat, Nov 28 · <a href="https://www.google.com/maps/search/?api=1&query=Shoyeido%20Kunkun%2C%20ASTY%20Road%2C%20Kyoto%20Station" target="_blank" rel="noopener">Map</a></div>
+    <ul>
+      <li data-id="souv-incense"><input type="checkbox"><div class="it"><b><span class="souv">Souvenir</span>Shoyeido incense, small box</b><small>~¥385–495 per box (8 or 16 sticks). 300-year-old Kyoto incense house; light and flat to pack.</small></div></li>
+    </ul>
+  </div>
 </section>
 
 <section class="city" data-city="Tokyo">
@@ -82,6 +92,15 @@
       <li data-id="gift-watches"><input type="checkbox"><div class="it"><b>Gift watches for friends · about $200–250 each</b><small>First choice: Orient Bambino (RN-AC0028S white/gold from ~¥30,000; RN-AC0032V purple ~¥44,000). Alternative: Seiko Selection open heart HFB001J / HFB002J / HFB003J (~$250–265). Ask for gift boxes and wrapping.</small></div></li>
     </ul>
     <div class="note">If you skip KUOE for a Japan-only Seiko instead, Seiko Dream Square (4-4-10 Ginza, 11:00–19:00) is a 5-minute walk from here.</div>
+    <div class="store"><b>Ginza Itoya (G.Itoya)</b> · 2-7-15 Ginza, Chuo-ku · 10:00–20:00, Sun 10:00–19:00 · Japan's best-known stationery store, 12 themed floors · <a href="https://www.google.com/maps/search/?api=1&query=Ginza%20Itoya%2C%202-7-15%20Ginza%2C%20Chuo-ku%2C%20Tokyo" target="_blank" rel="noopener">Map</a></div>
+    <ul>
+      <li data-id="stationery-self"><input type="checkbox"><div class="it"><b>Pens, notebooks and art supplies for you</b><small>3F WRITE: ~2,000 pens and fountain pens, gel pens from ~¥300. 4F–5F: notebooks and planners. 7F COLOR: paints, sketchbooks, colored pencils, calligraphy. Across the street, K.Itoya 2F does custom notebooks (Note Couture).</small></div></li>
+      <li data-id="souv-washi"><input type="checkbox"><div class="it"><b><span class="souv">Souvenir</span>Washi notebooks or cards</b><small>~¥1,000–1,700 per notebook; cards from a few hundred yen (1F and 2F). Grab these on the same Itoya visit.</small></div></li>
+    </ul>
+    <div class="store"><b>Shoyeido Ginza</b> · 7-3-8 Ginza, Chuo-ku · 10:00–19:00, weekends 10:00–18:00 · a short walk from Itoya · <a href="https://www.google.com/maps/search/?api=1&query=Shoyeido%20Ginza%2C%207-3-8%20Ginza%2C%20Chuo-ku%2C%20Tokyo" target="_blank" rel="noopener">Map</a></div>
+    <ul>
+      <li data-id="souv-sachet"><input type="checkbox"><div class="it"><b><span class="souv">Souvenir</span>Scent sachet (nioi-bukuro)</b><small>From ~¥660 each. You can pick the scent and the washi pouch here (Ginza, Kyoto main and Osaka stores only).</small></div></li>
+    </ul>
   </div>
   <div class="hood">
     <h3>Shibuya</h3>
@@ -107,6 +126,15 @@
     <ul>
       <li data-id="knife-engraved"><input type="checkbox"><div class="it"><b>Engraved Japanese knife</b><small>Pick a knife; free name engraving with purchase, about 15–30 min while you wait. Best on Sun, Nov 29 (Kama-Asa is open; many Kappabashi shops aren't). Pack it in checked luggage.</small></div></li>
     </ul>
+    <div class="store"><b>Dengama</b> · 1-4-3 Nishi-Asakusa, Taito-ku · 10:00–18:00, irregular closing days · start of Kappabashi street, ~10 min walk to Kama-Asa · <a href="https://www.google.com/maps/search/?api=1&query=Dengama%2C%201-4-3%20Nishi-Asakusa%2C%20Taito-ku%2C%20Tokyo" target="_blank" rel="noopener">Map</a></div>
+    <ul>
+      <li data-id="souv-hashioki"><input type="checkbox"><div class="it"><b><span class="souv">Souvenir</span>Chopstick rests (hashioki)</b><small>~¥300–1,000 each. Bins out front; Hasami-ware ones are the bestsellers. Buy a mixed set to hand out.</small></div></li>
+      <li data-id="souv-ochoko"><input type="checkbox"><div class="it"><b><span class="souv">Souvenir</span>Sake cup (ochoko)</b><small>~¥500–1,500 each. Ceramic, so ask them to wrap it.</small></div></li>
+    </ul>
+    <div class="store"><b>Kamawanu Asakusa</b> · 1-29-6 Asakusa, Taito-ku · 10:00–18:00 · tenugui specialist · <a href="https://www.google.com/maps/search/?api=1&query=Kamawanu%20Asakusa%2C%201-29-6%20Asakusa%2C%20Taito-ku%2C%20Tokyo" target="_blank" rel="noopener">Map</a></div>
+    <ul>
+      <li data-id="souv-tenugui"><input type="checkbox"><div class="it"><b><span class="souv">Souvenir</span>Tenugui cloth</b><small>~¥1,000–2,000 each. Printed cotton cloth in seasonal and classic patterns; flat and unbreakable.</small></div></li>
+    </ul>
   </div>
 </section>
 
@@ -114,9 +142,10 @@
   <h2>Departure</h2>
   <div class="days">Tue, Dec 1</div>
   <div class="hood">
-    <h3>Airport, before check-in</h3>
+    <h3>Airport</h3>
     <ul>
       <li data-id="tax-refund"><input type="checkbox"><div class="it"><b>Claim the 10% tax refund</b><small>Since Nov 1, 2026 you pay full price in store (¥5,000+ per store per day), then get the tax back at the departure airport kiosk before check-in. Bring passport, receipts and the items unopened.</small></div></li>
+      <li data-id="souv-royce"><input type="checkbox"><div class="it"><b><span class="souv">Souvenir</span>Royce' nama chocolate</b><small>~¥1,000 per box. Keep it cool, so buy it airside after security and carry it on.</small></div></li>
     </ul>
   </div>
 </section>

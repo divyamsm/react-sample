@@ -45,23 +45,18 @@
 <nav><div class="wrap" id="tabs"></div></nav>
 <main>
 
-<section class="city" data-city="Osaka">
-  <h2>Osaka</h2>
-  <div class="days">Wed, Nov 25</div>
+<section class="city" data-city="Kyoto">
+  <h2>Kyoto</h2>
+  <div class="days">Thu, Nov 26 – Fri, Nov 27</div>
   <div class="hood">
-    <h3>Namba</h3>
-    <div class="store"><b>Don Quijote Namba Sennichimae</b> · 12-7 Namba Sennichimae, Chuo-ku · a few minutes from Namba Station · 9:00–4:00 daily · <a href="https://www.google.com/maps/search/?api=1&query=Don%20Quijote%20Namba%20Sennichimae%2C%2012-7%20Namba%20Sennichimae%2C%20Chuo-ku%2C%20Osaka" target="_blank" rel="noopener">Map</a></div>
+    <h3>Shijo-Kawaramachi</h3>
+    <div class="store"><b>Don Quijote Shijo-Kawaramachi</b> · 321 Shioyacho, Kawaramachi-dori Takoyakushi-sagaru, Nakagyo · 10:00–1:00 daily · 3 min from Kyoto-Kawaramachi Station · <a href="https://www.google.com/maps/search/?api=1&query=Don%20Quijote%20Shijo%20Kawaramachi%2C%20321%20Shioyacho%2C%20Nakagyo%2C%20Kyoto" target="_blank" rel="noopener">Map</a></div>
     <ul>
-      <li data-id="sunscreen"><input type="checkbox"><div class="it"><b>Sunscreen · Bioré UV Aqua Rich (70 g)</b><small>~¥700–1,000. Now labeled 水感エッセンス on the 2026 version.</small></div></li>
+      <li data-id="sunscreen"><input type="checkbox"><div class="it"><b>Sunscreen · Bioré UV Aqua Rich (70 g)</b><small>~¥700–1,000. Go first thing Thu, Nov 26.</small></div></li>
       <li data-id="moisturizer"><input type="checkbox"><div class="it"><b>Moisturizer · Hada Labo Gokujyun lotion</b><small>~¥700–900. Blue bottle is the plain one.</small></div></li>
       <li data-id="cleanser"><input type="checkbox"><div class="it"><b>Cleanser · Senka Perfect Whip</b><small>~¥400–600.</small></div></li>
     </ul>
   </div>
-</section>
-
-<section class="city" data-city="Kyoto">
-  <h2>Kyoto</h2>
-  <div class="days">Thu, Nov 26 – Fri, Nov 27</div>
   <div class="hood">
     <h3>Downtown · Teramachi / Sanjo</h3>
     <div class="store"><b>KUOE KYOTO Main Store</b> · 224 Eirakucho, Tohbeh Bldg #105, Teramachi-dori Sanjo, Nakagyo · 11:00–17:30, closed Tuesday · walk-in, no booking · <a href="https://www.google.com/maps/search/?api=1&query=KUOE%20KYOTO%20Main%20Store%2C%20224%20Eirakucho%2C%20Nakagyo-ku%2C%20Kyoto" target="_blank" rel="noopener">Map</a></div>
@@ -89,9 +84,16 @@
     <ul>
       <li data-id="sneakers"><input type="checkbox"><div class="it"><b>Sneakers · ABC-Mart-exclusive pair</b><small>Look for adidas TOKYO in ABC-Mart-only colors (¥14,300), or Japan-limited Vans like Bravo (¥8,800) and Old Skool DS (¥9,350). Stock rotates; ask for 限定 (limited) models.</small></div></li>
     </ul>
-    <div class="store"><b>JINS Shibuya</b> · Japanese eyewear, done in ~30 min · <a href="https://www.google.com/maps/search/?api=1&query=JINS%20Shibuya%20Tokyo" target="_blank" rel="noopener">Map</a></div>
+    <div class="store"><b>Japan Blue Jeans Shibuya</b> · 5-28-7 Jingumae, #103 · 11:00–19:00 · Momotaro's sister brand, Kojima selvedge · <a href="https://www.google.com/maps/search/?api=1&query=Japan%20Blue%20Jeans%20Shibuya%2C%205-28-7%20Jingumae%2C%20Shibuya%2C%20Tokyo" target="_blank" rel="noopener">Map</a></div>
     <ul>
-      <li data-id="sunglasses"><input type="checkbox"><div class="it"><b>Sunglasses · JINS</b><small>Standard Sunglasses ¥5,900 or lighter Air Frame ¥8,900; or pick any frame and add a tinted lens from ¥3,300.</small></div></li>
+      <li data-id="selvedge-jeans"><input type="checkbox"><div class="it"><b>Selvedge jeans · Japan Blue</b><small>Jeans from ~¥17,600–25,300 (12–16oz shuttle-loom selvedge). Ask them to hem while you wait. New store in Shibuya PARCO 5F opens Nov 20 (11:00–21:00) if this one is busy.</small></div></li>
+    </ul>
+  </div>
+  <div class="hood">
+    <h3>Aoyama</h3>
+    <div class="store"><b>GG291 (Sabae eyewear shop)</b> · Monte Plaza, 3-18-5 Minami-Aoyama · 11:00–20:00, open daily · 10 min walk from Omotesando Station · <a href="https://www.google.com/maps/search/?api=1&query=GG291%2C%203-18-5%20Minami-Aoyama%2C%20Minato-ku%2C%20Tokyo" target="_blank" rel="noopener">Map</a></div>
+    <ul>
+      <li data-id="sunglasses"><input type="checkbox"><div class="it"><b>Handmade Sabae sunglasses</b><small>Fukui's showroom for frames from Sabae, where most Japanese eyewear is made. Sunglasses ¥25,300–40,700; tesio SORA or HARE (hand-polished acetate) are the entry point at ¥25,300.</small></div></li>
     </ul>
   </div>
   <div class="hood">
@@ -120,7 +122,7 @@
   const secs=[...document.querySelectorAll('.city')], tabs=document.getElementById('tabs');
   function show(c){secs.forEach(s=>s.classList.toggle('on',s.dataset.city===c));[...tabs.children].forEach(b=>b.classList.toggle('on',b.textContent===c));localStorage.setItem('jp-tab',c)}
   secs.forEach(s=>{const b=document.createElement('button');b.textContent=s.dataset.city;b.onclick=()=>show(s.dataset.city);tabs.appendChild(b)});
-  show(localStorage.getItem('jp-tab')||'Osaka');
+  show((document.querySelector('.city[data-city="'+localStorage.getItem('jp-tab')+'"]')?localStorage.getItem('jp-tab'):'Kyoto'));
   document.querySelectorAll('li[data-id]').forEach(li=>{const k='jp-'+li.dataset.id,cb=li.querySelector('input');cb.checked=localStorage.getItem(k)==='1';li.classList.toggle('done',cb.checked);cb.onchange=()=>{localStorage.setItem(k,cb.checked?'1':'0');li.classList.toggle('done',cb.checked)}});
 </script>
 </body>

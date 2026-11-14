@@ -37,7 +37,16 @@
   .souv{display:inline-block;background:#ff2d87;color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:999px;padding:2px 8px;margin-right:8px;vertical-align:2px}
   .legend{max-width:760px;margin:6px auto 0;padding:0 20px;font-size:13px;color:var(--muted)}
   footer{max-width:760px;margin:auto;padding:8px 20px 40px;color:var(--muted);font-size:12.5px}
+  .dmap .mapbox{height:260px;border-radius:12px;border:1px solid var(--line);margin:10px 0 6px;z-index:0}
+  .dmap .seg{font-size:13px;color:var(--muted);margin-top:10px}
+  .dmap .route{display:inline-block;margin:4px 0 6px;font-size:14px;color:var(--red);text-decoration:none;font-weight:600}
+  .dmap ol{margin:2px 0 4px;padding-left:0;list-style:none;font-size:13px;color:var(--muted);columns:2;column-gap:16px}
+  .dmap ol li{border:0;padding:1px 0;display:block}
+  .dmap ol b{display:inline-block;min-width:18px;color:var(--red)}
+  .pin{background:var(--red);color:#fff;border:2px solid #fff;border-radius:50%;width:24px!important;height:24px!important;line-height:20px;text-align:center;font:700 12px/20px -apple-system,Segoe UI,sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+  @media(max-width:520px){.dmap ol{columns:1}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
 <header>
@@ -53,6 +62,7 @@
   <div class="days">Our merged plan: Stuti's days, with your key buys fitted in. All times Japan time.</div>
   <div class="hood">
     <h3>Wed, Nov 25 · Osaka · Anniversary</h3>
+    <div class="dmap" data-day="0"></div>
     <ul>
       <li data-id="mp-0-0"><input type="checkbox"><div class="it"><b>9:15 · Land at KIX</b><small>Asiana OZ112. Visit Japan Web QR ready. Rapi:t to Namba, drop bags at APA Namba Ekimae Tower (check-in 3:00).</small></div></li>
       <li data-id="mp-0-1"><input type="checkbox"><div class="it"><b>11:00 · Lunch: Mizuno, Dotonbori</b><small>Walk-in at opening. Veg mushroom okonomiyaki, no bonito, for Stuti.</small></div></li>
@@ -67,6 +77,7 @@
   </div>
   <div class="hood">
     <h3>Thu, Nov 26 · Kyoto</h3>
+    <div class="dmap" data-day="1"></div>
     <ul>
       <li data-id="mp-1-0"><input type="checkbox"><div class="it"><b>7:00 · Namba → Kyoto Station</b><small>Konbini breakfast. Bags into station lockers.</small></div></li>
       <li data-id="mp-1-1"><input type="checkbox"><div class="it"><b>~10:30 · teamLab Biovortex (move ticket to today)</b><small>Ticket is still Fri 11:30. Move it using the link in Stuti&#x27;s email. Eat first: no café, no re-entry. ~2 hrs.</small></div></li>
@@ -81,6 +92,7 @@
   </div>
   <div class="hood">
     <h3>Fri, Nov 27 · Kyoto</h3>
+    <div class="dmap" data-day="2"></div>
     <ul>
       <li data-id="mp-2-0"><input type="checkbox"><div class="it"><b>5:45 · Leave for Arashiyama</b><small>Breakfast bought the night before.</small></div></li>
       <li data-id="mp-2-1"><input type="checkbox"><div class="it"><b>6:30 · Bamboo grove</b></div></li>
@@ -96,6 +108,7 @@
   </div>
   <div class="hood">
     <h3>Sat, Nov 28 · Kyoto → Tokyo</h3>
+    <div class="dmap" data-day="3"></div>
     <ul>
       <li data-id="mp-3-0"><input type="checkbox"><div class="it"><b>6:30 · Early checkout</b><small>Key drop confirmed Thursday.</small></div></li>
       <li data-id="mp-3-1"><input type="checkbox"><div class="it"><b>7:30 · Fushimi Inari summit hike</b><small>2.5–3 hrs. Hogyokudo senbei on the approach.</small></div></li>
@@ -109,6 +122,7 @@
   </div>
   <div class="hood">
     <h3>Sun, Nov 29 · Tokyo</h3>
+    <div class="dmap" data-day="4"></div>
     <ul>
       <li data-id="mp-4-0"><input type="checkbox"><div class="it"><b>8:00 · Breakfast: bricolage, Roppongi Hills</b></div></li>
       <li data-id="mp-4-1"><input type="checkbox"><div class="it"><b>9:00 · Meiji Jingu</b></div></li>
@@ -126,6 +140,7 @@
   </div>
   <div class="hood">
     <h3>Mon, Nov 30 · Tokyo</h3>
+    <div class="dmap" data-day="5"></div>
     <ul>
       <li data-id="mp-5-0"><input type="checkbox"><div class="it"><b>8:00 · Roppongi → Asakusa</b></div></li>
       <li data-id="mp-5-1"><input type="checkbox"><div class="it"><b>9:00 · Kagetsudo melon pan, Senso-ji, Nakamise</b></div></li>
@@ -135,12 +150,13 @@
       <li data-id="mp-5-5"><input type="checkbox"><div class="it"><b>3:30 · Shibuya Sky</b><small>Book Sun Nov 15, 7:00 am PST on Klook. Bring both passports.</small></div></li>
       <li data-id="mp-5-6"><input type="checkbox"><div class="it"><b>5:30 · Ginza: Itoya stationery</b><small>Key buy. A proper hour, not just the ground floor.</small></div></li>
       <li data-id="mp-5-7"><input type="checkbox"><div class="it"><b>6:30 · Dinner: Yasai no Ohsama</b><small>Confirm the meat-free vegetable course.</small></div></li>
-      <li data-id="mp-5-8"><input type="checkbox"><div class="it"><b>8:15 · Bar High Five → Bar Centifolia (10:00)</b><small>Centifolia booking Sun Nov 15, 7:00 am PST on TableCheck.</small></div></li>
+      <li data-id="mp-5-8"><input type="checkbox"><div class="it"><b>8:15 · Bar High Five, Ginza</b><small>Call from the street. Centifolia skipped.</small></div></li>
     </ul>
     <div class="note">Passing by: Dengama, Kamawanu (Kappabashi/Asakusa).</div>
   </div>
   <div class="hood">
     <h3>Tue, Dec 1 · Departure</h3>
+    <div class="dmap" data-day="6"></div>
     <ul>
       <li data-id="mp-6-0"><input type="checkbox"><div class="it"><b>8:00 · Nogi Shrine</b><small>Known for happy marriages.</small></div></li>
       <li data-id="mp-6-1"><input type="checkbox"><div class="it"><b>8:30 · Breakfast: Le Pain Quotidien, Midtown</b></div></li>
@@ -266,9 +282,31 @@
 
 </main>
 <footer>Prices are approximate as of Nov 13, 2026 (about ¥160 to $1). Check in store.</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const DAYMAPS=[[{"t": "Osaka", "s": [{"time": "9:15", "name": "Kansai Airport (KIX)", "q": "Kansai International Airport Terminal 1", "lat": 34.4347, "lng": 135.2444, "on": false}, {"time": "9:45", "name": "APA Hotel Namba Ekimae Tower (bags)", "q": "APA Hotel & Resort Osaka Namba Ekimae Tower, 1-2-13 Minatomachi, Osaka", "lat": 34.66611, "lng": 135.49645, "on": true}, {"time": "11:00", "name": "Mizuno, Dotonbori", "q": "Mizuno okonomiyaki, 1-4-15 Dotonbori, Osaka", "lat": 34.66837, "lng": 135.50322, "on": true}, {"time": "12:30", "name": "Osaka Castle", "q": "Osaka Castle Main Tower, Osaka", "lat": 34.68718, "lng": 135.5254, "on": true}, {"time": "3:00", "name": "Shinsaibashi-suji + Don Quijote", "q": "Shinsaibashi-suji Shopping Street, Osaka", "lat": 34.6725, "lng": 135.5014, "on": true}, {"time": "3:30", "name": "Pivot BASE (vegan takoyaki)", "q": "Pivot BASE, 1-7-21 Dotonbori, Osaka", "lat": 34.66869, "lng": 135.50253, "on": true}, {"time": "6:00", "name": "milpa (booked)", "q": "milpa, 1-16-25 Kitahorie, Nishi-ku, Osaka", "lat": 34.67408, "lng": 135.49504, "on": true}, {"time": "9:15", "name": "Bar Masuda", "q": "Bar Masuda, 2-3-11 Shinsaibashisuji, Osaka", "lat": 34.66957, "lng": 135.5021, "on": true}, {"time": "10:15", "name": "Hozenji Yokocho", "q": "Hozenji Temple, Namba, Osaka", "lat": 34.668, "lng": 135.5027, "on": true}, {"time": "11:00", "name": "Bar Nayuta", "q": "Bar Nayuta, Nishishinsaibashi, Osaka", "lat": 34.67204, "lng": 135.49835, "on": true}]}], [{"t": "Kyoto", "s": [{"time": "8:30", "name": "Kyoto Station", "q": "Kyoto Station", "lat": 34.9858, "lng": 135.7588, "on": true}, {"time": "10:30", "name": "teamLab Biovortex", "q": "teamLab Biovortex Kyoto", "lat": 34.98375, "lng": 135.76542, "on": true}, {"time": "1:00", "name": "Tenmade", "q": "Tenmade, 224 Hiyoshicho, Higashiyama-ku, Kyoto", "lat": 34.98912, "lng": 135.76904, "on": true}, {"time": "2:00", "name": "Hotel: West Japan Kyoto Kiyomizu", "q": "West Japan Kyoto Kiyomizu, Higashiyama-ku, Kyoto", "lat": 34.9977, "lng": 135.77632, "on": true}, {"time": "3:30", "name": "Tsugu Tsugu kintsugi", "q": "Kintsugi Tsugu Tsugu Kyoto, 572-15 Komatsucho, Higashiyama-ku, Kyoto", "lat": 34.99821, "lng": 135.77437, "on": true}, {"time": "5:30", "name": "Kiyomizu-dera", "q": "Kiyomizu-dera, Kyoto", "lat": 34.99484, "lng": 135.78502, "on": true}, {"time": "7:00", "name": "Chao Chao Gyoza", "q": "Chao Chao Gyoza Shijo Kawaramachi, Kyoto", "lat": 35.00284, "lng": 135.76948, "on": true}, {"time": "8:30", "name": "Bee's Knees", "q": "Bee's Knees bar, Kiyamachi, Kyoto", "lat": 35.00506, "lng": 135.77031, "on": true}, {"time": "9:30", "name": "Bar Alchemist", "q": "Bar Alchemist, Pontocho, Kyoto", "lat": 35.00406, "lng": 135.771, "on": true}, {"time": "10:30", "name": "Rocking Chair", "q": "Bar Rocking Chair, Kyoto", "lat": 35.00097, "lng": 135.76633, "on": true}]}], [{"t": "Kyoto", "s": [{"time": "6:30", "name": "Arashiyama Bamboo Grove", "q": "Arashiyama Bamboo Grove, Kyoto", "lat": 35.01674, "lng": 135.67115, "on": true}, {"time": "8:30", "name": "Tenryu-ji", "q": "Tenryu-ji, Kyoto", "lat": 35.01622, "lng": 135.67294, "on": true}, {"time": "11:30", "name": "Shigetsu (inside Tenryu-ji)", "q": "Shigetsu, Tenryu-ji, Kyoto", "lat": 35.01513, "lng": 135.6736, "on": true}, {"time": "2:00", "name": "OKIMONO Gion", "q": "Okimono-ya Higashiyama Gion, 30-5 Bishamoncho, Kyoto", "lat": 35.0007, "lng": 135.77774, "on": true}, {"time": "6:00", "name": "Kichi Kichi omurice", "q": "Kichi Kichi Omurice, Pontocho, Kyoto", "lat": 35.00727, "lng": 135.77082, "on": true}, {"time": "7:15", "name": "Kodai-ji", "q": "Kodai-ji, Kyoto", "lat": 35.0003, "lng": 135.7806, "on": true}, {"time": "8:45", "name": "Bar K6", "q": "Bar K6, Nijo, Kyoto", "lat": 35.01332, "lng": 135.77056, "on": true}, {"time": "9:45", "name": "L'Escamoteur", "q": "L'Escamoteur bar, Kyoto", "lat": 35.00182, "lng": 135.76999, "on": true}]}], [{"t": "Kyoto morning", "s": [{"time": "6:30", "name": "Hotel checkout", "q": "West Japan Kyoto Kiyomizu, Higashiyama-ku, Kyoto", "lat": 34.9977, "lng": 135.77632, "on": true}, {"time": "7:30", "name": "Fushimi Inari Taisha", "q": "Fushimi Inari Taisha, Kyoto", "lat": 34.9671, "lng": 135.7727, "on": true}, {"time": "11:00", "name": "Kyoto Station (12:13 Nozomi)", "q": "Kyoto Station", "lat": 34.9858, "lng": 135.7588, "on": true}]}, {"t": "Tokyo evening", "s": [{"time": "3:30", "name": "Sotetsu Fresa Inn Roppongi", "q": "Sotetsu Fresa Inn Tokyo-Roppongi, 3-10-1 Roppongi, Tokyo", "lat": 35.66345, "lng": 139.73338, "on": true}, {"time": "5:00", "name": "Keyakizaka, Roppongi Hills", "q": "Keyakizaka Dori, Roppongi Hills, Tokyo", "lat": 35.6597, "lng": 139.7296, "on": true}, {"time": "6:30", "name": "Chien-Fu", "q": "Chien-Fu, 3-1-22 Nishiazabu, Tokyo", "lat": 35.66061, "lng": 139.72707, "on": true}, {"time": "8:00", "name": "Bar Zoetrope", "q": "Shot Bar Zoetrope, 7-10-14 Nishishinjuku, Tokyo", "lat": 35.6945, "lng": 139.69846, "on": true}, {"time": "9:30", "name": "Bar B&F", "q": "Bar B&F, Nishishinjuku, Tokyo", "lat": 35.6895, "lng": 139.69666, "on": true}]}], [{"t": "Tokyo", "s": [{"time": "8:00", "name": "bricolage bread & co.", "q": "bricolage bread & co., Roppongi Hills, Tokyo", "lat": 35.65916, "lng": 139.72828, "on": true}, {"time": "9:00", "name": "Meiji Jingu", "q": "Meiji Jingu, Tokyo", "lat": 35.67484, "lng": 139.69963, "on": true}, {"time": "10:00", "name": "Cat Street, Harajuku", "q": "Cat Street, Harajuku, Tokyo", "lat": 35.66698, "lng": 139.70631, "on": true}, {"time": "11:00", "name": "Japan Blue Jeans", "q": "Japan Blue Jeans Shibuya, 5-28-7 Jingumae, Tokyo", "lat": 35.66446, "lng": 139.70355, "on": true}, {"time": "11:30", "name": "KUOE Omotesando", "q": "KUOE Omotesando, 4-3-17 Jingumae, Tokyo", "lat": 35.66713, "lng": 139.71025, "on": true}, {"time": "12:15", "name": "GG291 Aoyama", "q": "GG291, 3-18-5 Minami-Aoyama, Tokyo", "lat": 35.66505, "lng": 139.7133, "on": true}, {"time": "2:30", "name": "Isetan Shinjuku", "q": "Isetan Shinjuku, Tokyo", "lat": 35.69164, "lng": 139.7046, "on": true}, {"time": "4:00", "name": "Bic Camera Shinjuku West Exit", "q": "Bic Camera Shinjuku West Exit, Tokyo", "lat": 35.6925, "lng": 139.6985, "on": true}, {"time": "6:00", "name": "Sumo show, Kabukicho (area)", "q": "Kabukicho 1-chome, Shinjuku, Tokyo", "lat": 35.69454, "lng": 139.70271, "on": true}, {"time": "7:45", "name": "Kakekomi Gyoza", "q": "Shinjuku Kakekomi Gyoza, Kabukicho, Tokyo", "lat": 35.69477, "lng": 139.70239, "on": true}, {"time": "8:45", "name": "Golden Gai", "q": "Shinjuku Golden Gai, Tokyo", "lat": 35.69399, "lng": 139.7047, "on": true}]}], [{"t": "Tokyo", "s": [{"time": "9:00", "name": "Senso-ji", "q": "Senso-ji, Asakusa, Tokyo", "lat": 35.7148, "lng": 139.7967, "on": true}, {"time": "11:00", "name": "Kama-Asa, Kappabashi", "q": "Kama-Asa, 2-24-1 Matsugaya, Taito-ku, Tokyo", "lat": 35.71394, "lng": 139.78864, "on": true}, {"time": "12:30", "name": "Tempura Asakusa Sakura", "q": "Tempura Asakusa Sakura, Tokyo", "lat": 35.71019, "lng": 139.79665, "on": true}, {"time": "2:00", "name": "ABC-Mart Grand Stage Shibuya", "q": "ABC-MART GRAND STAGE Shibuya, 23-8 Udagawacho, Tokyo", "lat": 35.65999, "lng": 139.69922, "on": true}, {"time": "3:30", "name": "Shibuya Sky", "q": "Shibuya Sky, Shibuya Scramble Square, Tokyo", "lat": 35.65838, "lng": 139.70222, "on": true}, {"time": "5:30", "name": "Ginza Itoya", "q": "G.Itoya, 2-7-15 Ginza, Tokyo", "lat": 35.67307, "lng": 139.76718, "on": true}, {"time": "6:30", "name": "Yasai no Ohsama", "q": "Yasai no Ohsama Ginza, 8-10-17 Ginza, Tokyo", "lat": 35.6681, "lng": 139.76255, "on": true}, {"time": "8:15", "name": "Bar High Five", "q": "Bar High Five, Ginza, Tokyo", "lat": 35.6716, "lng": 139.76294, "on": true}]}], [{"t": "Tokyo", "s": [{"time": "8:00", "name": "Nogi Shrine", "q": "Nogi Shrine, Akasaka, Tokyo", "lat": 35.66859, "lng": 139.72805, "on": true}, {"time": "8:30", "name": "Tokyo Midtown (breakfast)", "q": "Tokyo Midtown, Roppongi, Tokyo", "lat": 35.66584, "lng": 139.73092, "on": true}, {"time": "10:45", "name": "Hotel checkout", "q": "Sotetsu Fresa Inn Tokyo-Roppongi, 3-10-1 Roppongi, Tokyo", "lat": 35.66345, "lng": 139.73338, "on": true}, {"time": "12:00", "name": "Haneda Airport Terminal 3", "q": "Haneda Airport Terminal 3, Tokyo", "lat": 35.54501, "lng": 139.76704, "on": false}]}]];
+const gm=q=>encodeURIComponent(q);
+function routeUrl(s){const o=s[0].q,d=s[s.length-1].q,w=s.slice(1,-1).map(x=>x.q);let u='https://www.google.com/maps/dir/?api=1&origin='+gm(o)+'&destination='+gm(d);if(w.length)u+='&waypoints='+w.map(gm).join('%7C');return u}
+let mapsBuilt=false;
+function buildMaps(){if(mapsBuilt||typeof L==='undefined')return;mapsBuilt=true;
+ document.querySelectorAll('.dmap').forEach(el=>{const day=DAYMAPS[+el.dataset.day];let n=0;
+  day.forEach(seg=>{const multi=day.length>1;
+   if(multi){const t=document.createElement('div');t.className='seg';t.textContent=seg.t;el.appendChild(t)}
+   const box=document.createElement('div');box.className='mapbox';el.appendChild(box);
+   const a=document.createElement('a');a.className='route';a.target='_blank';a.rel='noopener';a.href=routeUrl(seg.s);a.textContent='Open this route in Google Maps ↗';el.appendChild(a);
+   const ol=document.createElement('ol');el.appendChild(ol);
+   const m=L.map(box,{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(m);
+   const pts=[];
+   seg.s.forEach(s=>{n++;const li=document.createElement('li');li.innerHTML='<b>'+n+'</b>'+s.time+' · '+s.name+(s.on?'':' (off map)');ol.appendChild(li);
+    if(!s.on)return;const ll=[s.lat,s.lng];pts.push(ll);
+    L.marker(ll,{icon:L.divIcon({className:'pin',html:String(n),iconSize:[24,24]})}).addTo(m).bindPopup('<b>'+n+'. '+s.name+'</b><br>'+s.time+'<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+gm(s.q)+'">Open in Maps</a>')});
+   L.polyline(pts,{color:'#b7282e',weight:2,dashArray:'4 6',opacity:.7}).addTo(m);
+   m.fitBounds(pts,{padding:[24,24]});
+  })})}
+</script>
 <script>
   const secs=[...document.querySelectorAll('.city')], tabs=document.getElementById('tabs');
-  function show(c){secs.forEach(s=>s.classList.toggle('on',s.dataset.city===c));[...tabs.children].forEach(b=>b.classList.toggle('on',b.textContent===c));localStorage.setItem('jp-tab',c)}
+  function show(c){secs.forEach(s=>s.classList.toggle('on',s.dataset.city===c));[...tabs.children].forEach(b=>b.classList.toggle('on',b.textContent===c));localStorage.setItem('jp-tab',c);if(c==='Plan')setTimeout(buildMaps,0)}
   secs.forEach(s=>{const b=document.createElement('button');b.textContent=s.dataset.city;b.onclick=()=>show(s.dataset.city);tabs.appendChild(b)});
   show(localStorage.getItem('jp-tab')||'Plan');
   document.querySelectorAll('li[data-id]').forEach(li=>{const k='jp-'+li.dataset.id,cb=li.querySelector('input');cb.checked=localStorage.getItem(k)==='1';li.classList.toggle('done',cb.checked);cb.onchange=()=>{localStorage.setItem(k,cb.checked?'1':'0');li.classList.toggle('done',cb.checked)}});

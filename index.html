@@ -35,6 +35,7 @@
   .note{font-size:13.5px;background:#fff6e5;border:1px solid #f1dfb8;border-radius:10px;padding:10px 12px;margin-top:10px}
   .empty{color:var(--muted);font-size:14px;font-style:italic}
   .tgs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:3px}.tgs:empty{display:none}.legend{margin:6px 0 12px}
+  li.alt{margin-left:28px;border-top:1px dashed var(--line);border-left:3px solid #ced4da;padding-left:10px}.tg.chain{background:#495057}li.pickhdr small{font-style:italic}
   .tg{font-size:10.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;border-radius:999px;padding:2px 8px;color:#fff}
   .tg.food{background:#e8590c}.tg.drinks{background:#7048e8}.tg.shop{background:#1971c2}.tg.exp{background:#2b8a3e}.tg.res{background:#c92a2a}.tg.opt{background:#fff;color:#555;border:1px solid #aaa}
   .souv{display:inline-block;background:#ff2d87;color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:999px;padding:2px 8px;margin-right:8px;vertical-align:2px}
@@ -63,7 +64,7 @@
 <section class="city" data-city="Plan">
   <h2>Day-by-day plan</h2>
   <div class="days">Our merged plan: Stuti's days, with your key buys fitted in. All times Japan time.</div>
-  <div class="tgs legend"><span class="tg food">Food</span><span class="tg drinks">Drinks</span><span class="tg shop">Shopping</span><span class="tg exp">Experience</span><span class="tg res">Reservation</span><span class="tg opt">Optional</span></div>
+  <div class="tgs legend"><span class="tg food">Food</span><span class="tg drinks">Drinks</span><span class="tg shop">Shopping</span><span class="tg exp">Experience</span><span class="tg res">Reservation</span><span class="tg opt">Optional</span><span class="tg chain">Chain</span></div>
   <div class="hood">
     <h3>Wed, Nov 25 · Osaka · Anniversary</h3>
     <div class="dmap" data-day="0"></div>
@@ -125,7 +126,12 @@
       <li data-id="mp-3-5"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg exp">Experience</span></div><b>3:30 · Roppongi Hills &amp; Midtown, check in</b></div></li>
       <li data-id="mp-3-6"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg exp">Experience</span></div><b>5:00 · Keyakizaka lights</b></div></li>
       <li data-id="mp-3-7"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg food">Food</span></div><b>6:30 · Dinner: Chien-Fu Roppongi</b><small>Fully vegetarian Taiwanese.</small></div></li>
-      <li data-id="mp-3-8"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg drinks">Drinks</span></div><b>8:00 · Bar Trench → Bar Tram, Ebisu</b><small>Walk-in absinthe and herbal-liqueur cocktails, 2 min apart. Trench 6 pm–2 am; Tram does the absinthe-fountain ritual, open till 3 am Sat. 2 stops from Roppongi on the Hibiya line.</small></div></li>
+      <li data-id="mp-3-8"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg drinks">Drinks</span></div><b>8:00 · Drinks: pick one</b><small>Stuti chooses. Chain = do these in order, one after the other.</small></div></li>
+      <li data-id="mp-3-8a" class="alt"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg drinks">Drinks</span><span class="tg opt">Optional</span><span class="tg chain">Chain</span></div><b>Option A · Bar Trench → Bar Tram, Ebisu</b><small>Walk-in absinthe and herbal-liqueur cocktails, 2 min apart. Trench 6 pm–2 am; Tram does the absinthe-fountain ritual, open till 3 am Sat. 2 stops from Roppongi on the Hibiya line.</small></div></li>
+      <li data-id="mp-3-8b" class="alt"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg drinks">Drinks</span><span class="tg opt">Optional</span></div><b>Option B · Tokyo Confidential, Azabu-Juban</b><small>Walk-in rooftop bar facing Tokyo Tower, 9F THE V CITY PLACE. Asia&#x27;s 50 Best No. 70 (2025). 6 pm–2 am. Walkable from the hotel.</small></div></li>
+      <li data-id="mp-3-8c" class="alt"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg drinks">Drinks</span><span class="tg opt">Optional</span><span class="tg res">Reservation</span><span class="tg chain">Chain</span></div><b>Option C · Gen Yamamoto → Tokyo Confidential, Azabu-Juban</b><small>8-seat cocktail omakase with seasonal Japanese fruit: 5/6/7 drinks ¥8,800/10,000/11,000 + ¥1,000 seat. Phone only (03-6434-0652), up to 7 days ahead; last booking 9 pm. Then a 3 min walk to Tokyo Confidential.</small></div></li>
+      <li data-id="mp-3-8d" class="alt"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg drinks">Drinks</span><span class="tg opt">Optional</span><span class="tg chain">Chain</span></div><b>Option D · Bar Zoetrope → Bar B&amp;F, Nishi-Shinjuku</b><small>Changes the night: ~25 min each way to Shinjuku. Zoetrope: 300 Japanese whiskies, cash only, Saturday is its only night.</small></div></li>
+      <li data-id="mp-3-8e" class="alt"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg drinks">Drinks</span><span class="tg opt">Optional</span><span class="tg res">Reservation</span></div><b>Option E · Bar Benfiddich, Nishi-Shinjuku</b><small>World&#x27;s 50 Best; farm herbs ground at the bar, no menu. Changes the night (Shinjuku). TableCheck only; November seats opened Oct 20, so likely full. ~¥15,000–20,000 for two.</small></div></li>
     </ul>
   </div>
   <div class="hood">
@@ -156,7 +162,9 @@
       <li data-id="mp-5-1"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg exp">Experience</span><span class="tg food">Food</span></div><b>9:00 · Senso-ji, Nakamise, Kagetsudo melon pan</b><small>Early, before the crowds.</small></div></li>
       <li data-id="mp-5-2"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg exp">Experience</span></div><b>10:00 · Wander Asakusa&#x27;s back streets</b></div></li>
       <li data-id="mp-5-3"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg shop">Shopping</span></div><b>11:00 · Kappabashi: knife + free engraving</b><small>Key buy. Kama-Asa (closes 16:30 today) or Zaku on the same street. Checked bag only.</small></div></li>
-      <li data-id="mp-5-4"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg food">Food</span></div><b>12:30 · Lunch: Tempura Asakusa Sakura</b></div></li>
+      <li data-id="mp-5-4"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg food">Food</span></div><b>12:30 · Lunch: pick one</b><small>Stuti chooses.</small></div></li>
+      <li data-id="mp-5-4a" class="alt"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg food">Food</span><span class="tg opt">Optional</span></div><b>Option A · Tempura Asakusa Sakura</b><small>Walk-in.</small></div></li>
+      <li data-id="mp-5-4b" class="alt"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg food">Food</span><span class="tg opt">Optional</span><span class="tg res">Reservation</span></div><b>Option B · Bon, Ryusen (zen temple vegetarian)</b><small>Fucha ryori since 1959, all plant-based, served in tatami rooms. Weekday lunch ¥5,000 + tax/service; last order 1 pm. Reservation required; cash at lunch. ~10 min walk from Kappabashi.</small></div></li>
       <li data-id="mp-5-5"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg shop">Shopping</span></div><b>2:00 · Hinoya, Ueno Ameyoko: jeans</b><small>Key buy. Ginza Line Tawaramachi → Ueno. Compare Momotaro, Pure Blue Japan, Oni, Iron Heart; sister stores ONE and PLUS MART next door. Ask about hemming. Open 10:30–8:10.</small></div></li>
       <li data-id="mp-5-6"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg shop">Shopping</span></div><b>3:30 · Ginza: Itoya stationery</b><small>Key buy. Ginza Line straight from Ueno. A proper hour, not just the ground floor.</small></div></li>
       <li data-id="mp-5-7"><input type="checkbox"><div class="it"><div class="tgs"><span class="tg shop">Shopping</span></div><b>5:00 · Bic Camera Yurakucho: gift watches + whisky</b><small>Tax-free counter.</small></div></li>
